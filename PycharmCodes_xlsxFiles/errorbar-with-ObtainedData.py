@@ -8,8 +8,6 @@ filename = 'data_return_0726.xlsx'
 markers= ['o', 's', 'D', '^', 'v', 'p','*']
 colors= ['red', 'green', 'blue', 'black', 'gray', 'violet', 'orange']
 
-asdasdasd
-
 # 특정 케이스에 대한 데이터 추출
 # d_case = input("Enter a finger-size to show (9, 12, 15, 18, 21, 24, 27): ")
 #
@@ -55,7 +53,7 @@ asdasdasd
 #fig.savefig(f'{d_case}mm_force_pressure_errorbar.png')
 
 ## exp_type 따라 보고싶을 때
-exp_case = input('Enter a exp-type to show (dn, dp, un, up) :')
+exp_case = input('Enter a exp-type to show (dn, dp, un, up dn_new, un_new) :')
 
 df = pd.read_excel(filename, sheet_name = exp_case)
 pressures = ["10kpa", "20kpa", "30kpa", "40kpa", "50kpa", "60kpa", "70kpa"]
