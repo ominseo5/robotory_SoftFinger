@@ -6,6 +6,7 @@ import os
 import pandas as pd
 import keyboard
 
+## 주석 추가 연습
 # 시리얼 포트 설정
 try:
     stm32f7 = serial.Serial('COM15', 115200, timeout=1)  # 포트 이름과 보드레이트 설정
