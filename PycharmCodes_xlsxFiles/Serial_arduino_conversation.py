@@ -1,6 +1,4 @@
 import serial
-import time
-import csv
 import datetime
 import os
 import pandas as pd
@@ -19,21 +17,21 @@ except serial.SerialException as e:
 SayingTo = input("Enter a message to send (enter 'load' to start): ")
 stm32f7.write((SayingTo + '\n').encode())
 
-# 'load' 메시지를 받은 경우에만 데이터 수신 및 CSV 파일 저장 시작
+# 'load' 메시지를 받은 경우에만 데이터 수신 및 excel 파일 저장 시작
 if SayingTo.strip().lower() == "load":
     print("Starting data collection")
 
     # 현재 날짜와 시간을 얻어 파일 이름 생성
     now = datetime.datetime.now()
     time_string = now.strftime("%y%m%d_%H%M")
-    file_path = f"C:/Users/82103/OneDrive/Documents/성균관대학교/LAB/test_newnote.csv"
+    file_path = f"C:/Users/82103/OneDrive/Documents/성균관대학교/LAB/skku_robotory/PycharmCodes_xlsxFiles/18mm_ThickVar.xlsx"
 
     # 디렉토리 경로가 존재하는지 확인하고, 없으면 생성
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
     # CSV 파일을 생성하고 헤더 작성
     if os.path.exists(file_path):
-        df = pd.read_csv(file_path)
+        df = pd.read_excel(file_path)
         pressure_finger = input("Enter a pressure, finger type used: ")
         new_column_name = f"Weight_{pressure_finger}"
     else:
@@ -93,9 +91,8 @@ if SayingTo.strip().lower() == "load":
     if collected_data:
         new_data = pd.Series(collected_data, name=new_column_name)
         df = pd.concat([df, new_data], axis=1)
-
     # CSV 파일로 저장
-    df.to_csv(file_path, index=False, encoding='utf-8')
+    df.to_excel(file_path, index=False, engine='openpyxl')
     print("Data collection finished. Check file at:", file_path)
 else:
     print("Invalid command. Terminating program.")
