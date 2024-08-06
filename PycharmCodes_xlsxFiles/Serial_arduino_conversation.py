@@ -9,7 +9,7 @@ import keyboard
 ## 주석 추가 연습
 # 시리얼 포트 설정
 try:
-    stm32f7 = serial.Serial('COM15', 115200, timeout=1)  # 포트 이름과 보드레이트 설정
+    stm32f7 = serial.Serial('COM3', 115200, timeout=1)  # 포트 이름과 보드레이트 설정
     print("Starting Conversation with Arduino")
 except serial.SerialException as e:
     print(f"Error opening serial port: {e}")
@@ -26,7 +26,7 @@ if SayingTo.strip().lower() == "load":
     # 현재 날짜와 시간을 얻어 파일 이름 생성
     now = datetime.datetime.now()
     time_string = now.strftime("%y%m%d_%H%M")
-    file_path = f"C:/Users/OMS55/OneDrive/Documents/성균관대학교/LAB/FingerForce_data_combine12_new_neg.csv"
+    file_path = f"C:/Users/82103/OneDrive/Documents/성균관대학교/LAB/test_newnote.csv"
 
     # 디렉토리 경로가 존재하는지 확인하고, 없으면 생성
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
