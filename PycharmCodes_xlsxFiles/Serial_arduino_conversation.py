@@ -24,9 +24,9 @@ if SayingTo.strip().lower() == "load":
     # 현재 날짜와 시간을 얻어 파일 이름 생성
     now = datetime.datetime.now()
     time_string = now.strftime("%y%m%d_%H%M")
-    file_path = f"C:/Users/82103/OneDrive/Documents/성균관대학교/LAB/skku_robotory/PycharmCodes_xlsxFiles/18mm_ThickVar.xlsx"
+    file_path = f"C:/Users/82103/OneDrive/Documents/성균관대학교/LAB/skku_robotory/PycharmCodes_xlsxFiles/18mm_ThickVar_negative.xlsx"
 
-    # 디렉토리 경로가 존재하는지 확인하고, 없으면 생성
+    # 디렉토리 경로가 존재하는지 확인하고,q 없으면 생성
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
     # CSV 파일을 생성하고 헤더 작성
