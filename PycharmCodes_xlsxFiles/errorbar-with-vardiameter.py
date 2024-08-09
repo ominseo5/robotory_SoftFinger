@@ -6,7 +6,7 @@ import numpy as np
 filename = 'var_diam_data18mm.xlsx'
 
 markers= ['o', 's', 'D', '^', 'v', 'p']
-colors= ['red', 'green', 'blue', 'gray', 'violet', 'orange']
+colors= ['red', 'gray','green' ,'violet', 'blue', 'orange']
 
 ## exp_type 따라 보고싶을 때
 exp_case = input('Enter a exp-type to show (dn, dp, un, up) :')
