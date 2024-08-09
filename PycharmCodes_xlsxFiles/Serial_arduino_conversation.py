@@ -24,14 +24,14 @@ if SayingTo.strip().lower() == "load":
     # 현재 날짜와 시간을 얻어 파일 이름 생성
     now = datetime.datetime.now()
     time_string = now.strftime("%y%m%d_%H%M")
-    file_path = f"C:/Users/82103/OneDrive/Documents/성균관대학교/LAB/skku_robotory/PycharmCodes_xlsxFiles/18mm_ThickVar_negative.xlsx"
+    file_path = f"C:/Users/82103/OneDrive/Documents/성균관대학교/LAB/skku_robotory/PycharmCodes_xlsxFiles/18mm_diff_diameter.csv"
 
     # 디렉토리 경로가 존재하는지 확인하고,q 없으면 생성
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
     # CSV 파일을 생성하고 헤더 작성
     if os.path.exists(file_path):
-        df = pd.read_excel(file_path)
+        df = pd.read_csv(file_path)
         pressure_finger = input("Enter a pressure, finger type used: ")
         new_column_name = f"Weight_{pressure_finger}"
     else:
@@ -69,11 +69,11 @@ if SayingTo.strip().lower() == "load":
 
         try:
             weight = float(SdataPacket)
-            if weight > 0.5:  # 0 데이터를 무시
+            if weight > 0.09:  # 0 데이터를 무시
                 collected_data.append(weight)
                 print(format(weight, '.2f'))
                 # i += 1
-            elif weight < -0.5:
+            elif weight < -0.09:
                 collected_data.append(-1*weight)
                 print(format(-1*weight, '.2f'))
 
@@ -92,7 +92,7 @@ if SayingTo.strip().lower() == "load":
         new_data = pd.Series(collected_data, name=new_column_name)
         df = pd.concat([df, new_data], axis=1)
     # CSV 파일로 저장
-    df.to_excel(file_path, index=False, engine='openpyxl')
+    df.to_csv(file_path, index=False, encoding = 'utf-8')
     print("Data collection finished. Check file at:", file_path)
 else:
     print("Invalid command. Terminating program.")
