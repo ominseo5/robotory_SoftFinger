@@ -5,8 +5,8 @@ import numpy as np
 # 엑셀 파일 로드 (파일 경로를 맞추어야 함)
 filename = 'var_diam_data18mm.xlsx'
 
-markers= ['o', 's', 'D']
-colors= ['red', 'green', 'blue']
+markers= ['o', 's', 'D', '^', 'v', 'p']
+colors= ['red', 'green', 'blue', 'gray', 'violet', 'orange']
 
 ## exp_type 따라 보고싶을 때
 exp_case = input('Enter a exp-type to show (dn, dp, un, up) :')
@@ -19,7 +19,7 @@ df = df.drop("Unnamed: 0", axis=1)
 
 fig = plt.figure(figsize=(10, 6))
 
-for i in range(3):
+for i in range(6):
     data = []
     mean = []
     std = []
@@ -27,7 +27,7 @@ for i in range(3):
     # if i == 0:
     #     i+=1
     for pressure in pressures:
-        pressure_data = df.loc[pressure, [f"Weight_{exp_case}18{18+6*i}.1", f"Weight_{exp_case}18{18+6*i}.2", f"Weight_{exp_case}18{18+6*i}.3"]]
+        pressure_data = df.loc[pressure, [f"Weight_{exp_case}18{18+3*i}.1", f"Weight_{exp_case}18{18+3*i}.2", f"Weight_{exp_case}18{18+3*i}.3"]]
         pressure_mean = np.mean(pressure_data, axis=0)
         pressure_std = np.std(pressure_data, axis=0)
         data.append(list(pressure_data))
