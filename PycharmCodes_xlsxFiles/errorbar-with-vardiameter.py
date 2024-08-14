@@ -39,7 +39,7 @@ for i in range(6):
     std = np.array(std)
 
     # errorbar 그리기
-    plt.errorbar(p_num, mean, yerr=std, fmt=f'-{markers[i]}', capsize=5, label=f'{18+6*(i)}mm', linewidth = 0.5, markersize = 4, ecolor=colors[i], color=colors[i])
+    plt.errorbar(p_num, mean, yerr=std, fmt=f'-{markers[i]}', capsize=5, label=f'{18+3*(i)}mm', linewidth = 0.5, markersize = 4, ecolor=colors[i], color=colors[i])
 
 plt.xlabel('Pressure (kPa)')
 plt.ylabel('Force (N)')
