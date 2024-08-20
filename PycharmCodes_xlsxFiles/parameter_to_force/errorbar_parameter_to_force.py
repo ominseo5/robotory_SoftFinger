@@ -18,6 +18,12 @@ index_dict = {
     "t":["0.5mm", "0.6mm", "0.7mm", "0.8mm", "0.9mm"],
     "n":['n4','n6','n8','n10','n12']
 }
+name = {
+    "d":"diameter",
+    "h":"height",
+    "t":"thickness",
+    "n":"n-values"
+}
 unit = {
     'd':'mm',
     'h':'mm',
@@ -68,7 +74,7 @@ for i in range(num):
 
 plt.xlabel(f'different {parameter}-values ({unit[parameter]})')
 plt.ylabel('Force (N)')
-plt.title(f'Force-Pressure Error Bars for {exp_case}, different {parameter}')
+plt.title(f'Force-{name[parameter]} Error Bars for {exp_case} case, different {name[parameter]}')
 plt.legend()
 plt.grid(True)
 plt.xticks(index_dict_numonly[parameter])
