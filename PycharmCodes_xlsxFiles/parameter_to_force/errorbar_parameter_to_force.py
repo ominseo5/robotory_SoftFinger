@@ -18,24 +18,28 @@ index_dict = {
     "t":["0.5mm", "0.6mm", "0.7mm", "0.8mm", "0.9mm"],
     "n":['n4','n6','n8','n10','n12']
 }
+
 name = {
     "d":"diameter",
     "h":"height",
     "t":"thickness",
     "n":"n-values"
 }
+
 unit = {
     'd':'mm',
     'h':'mm',
     't':'mm',
     'n':None
 }
+
 index_dict_numonly = {
     "d": [18,21,24,27,30,33],
     "h": [9,12,15,18,21,24,27],
     "t": [0.5,0.6,0.7,0.8,0.9],
     "n": [4, 6, 8, 10, 12]
 }
+
 pressures = ["10kpa", "20kpa", "30kpa", "40kpa", "50kpa", "60kpa", "70kpa"],
 p_num = ['10', '20', '30', '40', '50', '60', '70']
 

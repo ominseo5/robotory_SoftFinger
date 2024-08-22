@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # 엑셀 파일 로드 (파일 경로를 맞추어야 함)
-filename = 'data_return_0726.xlsx'
+filename = 'var_height_data_d24mm.xlsx'
 
 markers= ['o', 's', 'D', '^', 'v', 'p','*']
 colors= ['red', 'green', 'blue', 'black', 'gray', 'violet', 'orange']
@@ -88,6 +88,6 @@ plt.ylabel('Force (N)')
 plt.title(f'Force-Pressure Error Bars for {exp_case}')
 plt.legend()
 plt.grid(True)
-#plt.show()
+plt.show()
 name_to_save = input('press file name to be saved: ')
 fig.savefig(name_to_save)
